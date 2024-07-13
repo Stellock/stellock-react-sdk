@@ -1,6 +1,6 @@
 {
-  "name": "stellock-react-sdk",
-  "version": "0.0.1",
+  "name": "stk-sdk-test",
+  "version": "0.4.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

@@ -1,3 +1,5 @@
 import "./tailwind.css";
 
-export { default as Hello } from "./components/Hello";
+export { StellockProvider, useStellock } from "./providers/StellockProvider";
+export { default as AuthModal } from "./components/AuthModal";
+export * from "./hooks/index";
