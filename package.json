@@ -1,0 +1,40 @@
+{
+  "name": "stellock-react-sdk",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "build:ts": "tsc",
+    "build:css": "postcss src/tailwind.css -o dist/tailwind.css",
+    "build": "npm run lint && npm run build:ts && npm run build:css",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [],
+  "author": "Manav Gadhiya",
+  "license": "ISC",
+  "description": "React SDK for Stellock - MPC Wallet for Stellar Blockchain",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "cpx": "^1.5.0",
+    "eslint": "^9.7.0",
+    "globals": "^15.8.0",
+    "postcss": "^8.4.39",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.0"
+  }
+}
