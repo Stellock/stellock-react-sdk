@@ -1,9 +1,24 @@
+import { GoogleLogin } from "@react-oauth/google";
+// import { CustomJwtPayload } from "../lib/interfaces";
+import { jwtDecode } from "jwt-decode";
+
 const AuthModal = () => {
   return (
     <div className="bg-red-500">
       <div>
         <div className="bg-slate-600">
-          <button>Google</button>
+          <GoogleLogin
+            onSuccess={async (credentialResponse) => {
+              console.log(jwtDecode(credentialResponse.credential as string));
+              // const data = jwtDecode(
+              //   credentialResponse.credential as string
+              // ) as CustomJwtPayload;
+              // await login(data.email);
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+          />
           <br />
           <button>Github</button>
           <br />

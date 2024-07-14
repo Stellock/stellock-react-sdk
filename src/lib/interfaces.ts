@@ -6,5 +6,11 @@ export interface StellockContextType {
 }
 
 export interface StellockProviderProps {
+  googleClientId: string;
+  twitchClientId: string;
   children: ReactNode;
+}
+
+export interface CustomJwtPayload {
+  email: string;
 }
