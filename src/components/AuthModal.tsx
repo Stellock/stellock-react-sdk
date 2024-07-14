@@ -1,21 +1,14 @@
 import { GoogleLogin } from "@react-oauth/google";
-// import { CustomJwtPayload } from "../lib/interfaces";
 import { jwtDecode } from "jwt-decode";
 import { useTwitchAuth } from "../providers/TwitchProvider";
 import { useGithubAuth } from "../providers/GithubProvider";
+import login from "../helpers/login";
+import { CustomJwtPayload } from "../lib/interfaces";
 
 const AuthModal = () => {
-  const {
-    authData: githubAuthData,
-    login: githubLogin,
-    logout: githubLogout,
-  } = useGithubAuth();
+  const { login: githubLogin } = useGithubAuth();
 
-  const {
-    authData: twitchAuthData,
-    login: twitchLogin,
-    logout: twitchLogout,
-  } = useTwitchAuth();
+  const { login: twitchLogin } = useTwitchAuth();
 
   return (
     <div className="bg-red-500">
@@ -24,10 +17,10 @@ const AuthModal = () => {
           <GoogleLogin
             onSuccess={async (credentialResponse) => {
               console.log(jwtDecode(credentialResponse.credential as string));
-              // const data = jwtDecode(
-              //   credentialResponse.credential as string
-              // ) as CustomJwtPayload;
-              // await login(data.email);
+              const data = jwtDecode(
+                credentialResponse.credential as string
+              ) as CustomJwtPayload;
+              await login(data.email);
             }}
             onError={() => {
               console.log("Login Failed");
