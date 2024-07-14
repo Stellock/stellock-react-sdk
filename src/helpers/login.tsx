@@ -10,10 +10,7 @@ const login = async (email: string) => {
   });
 
   const keyPart = await response.json();
-  storeUint8ArrayInLocalStorage(
-    "pkPart1",
-    new Uint8Array(keyPart.KeyPart0.data)
-  );
+  storeUint8ArrayInLocalStorage("pkPart1", new Uint8Array(keyPart.msg.data));
 };
 
 export default login;

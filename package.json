@@ -1,6 +1,6 @@
 {
   "name": "stellock-react-sdk",
-  "version": "0.0.2",
+  "version": "0.1.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -19,6 +19,7 @@
   "license": "ISC",
   "description": "React SDK for Stellock - MPC Wallet for Stellar Blockchain",
   "dependencies": {
+    "@creit.tech/stellar-wallets-kit": "^0.9.1",
     "@react-oauth/google": "^0.12.1",
     "jwt-decode": "^4.0.0",
     "react": "^18.3.1",

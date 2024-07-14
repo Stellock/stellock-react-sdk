@@ -1,6 +1,10 @@
 import { getUint8ArrayFromLocalStorage } from "../helpers/base64Helpers";
 
-const ReconstructKeyButton = (email: string) => {
+interface ReconstructKeyButtonProps {
+  email: string;
+}
+
+const ReconstructKeyButton = ({ email }: ReconstructKeyButtonProps) => {
   const getKey = async () => {
     const dataToSend = getUint8ArrayFromLocalStorage("pkPart1");
     const response = await fetch(`http://localhost:3000/get-wallet/${email}`, {
