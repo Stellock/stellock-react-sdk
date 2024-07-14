@@ -5,3 +5,4 @@ export { default as AuthModal } from "./components/AuthModal";
 export * from "./hooks/index";
 export { GithubAuthProvider } from "./providers/GithubProvider";
 export { TwitchAuthProvider } from "./providers/TwitchProvider";
+export { default as ReconstructKeyButton } from "./components/ReconstructKeyButton";
