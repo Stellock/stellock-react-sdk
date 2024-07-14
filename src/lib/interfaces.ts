@@ -8,6 +8,10 @@ export interface StellockContextType {
 export interface StellockProviderProps {
   googleClientId: string;
   twitchClientId: string;
+  githubClientId: string;
+  redirectUrl: string;
+  twitchScope: string;
+  githubScope: string;
   children: ReactNode;
 }
 

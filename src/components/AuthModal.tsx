@@ -1,8 +1,22 @@
 import { GoogleLogin } from "@react-oauth/google";
 // import { CustomJwtPayload } from "../lib/interfaces";
 import { jwtDecode } from "jwt-decode";
+import { useTwitchAuth } from "../providers/TwitchProvider";
+import { useGithubAuth } from "../providers/GithubProvider";
 
 const AuthModal = () => {
+  const {
+    authData: githubAuthData,
+    login: githubLogin,
+    logout: githubLogout,
+  } = useGithubAuth();
+
+  const {
+    authData: twitchAuthData,
+    login: twitchLogin,
+    logout: twitchLogout,
+  } = useTwitchAuth();
+
   return (
     <div className="bg-red-500">
       <div>
@@ -20,9 +34,9 @@ const AuthModal = () => {
             }}
           />
           <br />
-          <button>Github</button>
+          <button onClick={() => githubLogin()}>Github</button>
           <br />
-          <button>Twitch</button>
+          <button onClick={() => twitchLogin()}>Twitch</button>
           <br />
         </div>
       </div>
