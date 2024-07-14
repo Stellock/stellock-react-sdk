@@ -13,7 +13,11 @@ const ReconstructKeyButton = (email: string) => {
     const data = await response.json();
     console.log(data);
   };
-  return <div>Reconstruct</div>;
+  return (
+    <div>
+      <button onClick={() => getKey()}>Reconstruct</button>
+    </div>
+  );
 };
 
 export default ReconstructKeyButton;
